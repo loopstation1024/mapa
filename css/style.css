@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.ttf');
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    position: relative;
+    text-align: center;
+    margin: 0px;
+    /*height:90vh*/
+}
+image{
+    width: 19px;
+}
+#nav{
+    position: fixed;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    bottom: 0;
+}
+.nav_container{
+    background-color: #fff;
+    max-width: 400px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+}
+.nav_container img{
+    margin: 8px 35px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+}
+.nav_container img, .language-container img{
+    cursor: pointer;
+}
+.buscar-container, .language-container{
+    background-color: #fff;
+    border-radius: 50px;
+    width: 216px;
+    height: 30px;
+    margin: auto;
+    padding: 10px;
+    z-index: 10001;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.buscar-container input{
+    height: 25px;
+}
+#map{
+    /*width:100%;*/
+    position: relative;
+    height:100vh;
+    background-image: url("../img/fondo-malla.svg");
+    background-color: #BACDCE;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*tarjetas*/
+.tarjeta-universidad{
+    background-image: url("../img/tarjeta-universidad.png");
+}
+.tarjeta-institucion{
+    background-image: url("../img/tarjeta-institucion.png");
+}
+.tarjeta-banco{
+    background-image: url("../img/tarjeta-banco.png");
+}
+.tarjeta-real{
+    background-image: url("../img/tarjeta-real.png");
+}
+.titulo-container{
+    position: absolute;
+    width: 367px;
+    height: 79px;
+    text-align: center;
+    display: table;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.tarjeta_container{
+    position: absolute;
+    top: 0;
+    margin: auto;
+    right: 0;
+    left: 0;
+    width: 409px;
+    height: 231px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.texto-container{
+    position: absolute;
+    width: 252px;
+    height: 152px;
+    bottom: 6px;
+    right: 0;
+    text-align: left;
+}
+.tarjeta_titulo{
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    display:table-cell;
+    vertical-align:middle
+}
+.persona, .cargo{
+    padding: 0px;
+    margin: 0px;
+    color: grey;
+}
+.persona{
+    font-size: 19px;
+}
+.cargo{
+    font-size: 11px;
+}
+.redes-sociales{
+    width: 100%;
+    height: 55px;
+}
+.redes-sociales img{
+    margin: 5px 5px;
+}
+.jvectormap-tip{
+    background-color: transparent !important;
+    border:none !important;
+}
+image:hover{
+    cursor: pointer;
+}
+.tarjeta-cerrar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer; 
+    z-index: 1000;
+}
+.jvectormap-zoomin, .jvectormap-zoomout{
+    display: none;
+}
+#initial-touch{
+    z-index: 1002;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.logo-universia{
+    margin-top: 33px;
+}
+.touch-bottom{
+    position: absolute;
+    bottom: 61px;
+    left: 0;
+    right: 0;
+}
+.touch-bottom h5{
+   margin-bottom: 0px;
+}
+.touch-bottom p{
+   font-size: 11px;
+   margin-top: 0px;
+}
+.touch-bottom img {
+    width: 25px;
+}
+.logo-universia img{
+    width: 300px;
+}
+circle[data-index="130"]{
+    display: none;
+}
+@media (max-width: 409px){
+    .tarjeta_container {
+        width: 320px;
+    }
+    .titulo-container{
+        width: 292px;
+        height: 55px;
+    }
+    .tarjeta_titulo{
+        font-size: 0.9em;
+    }
+    .texto-container{
+        bottom: 23px;
+        width: 202px;
+    }
+    .redes-sociales img {
+        margin: 3px 8px;
+        width: 27px;
+    }
+    .redes-sociales{
+        height: 33px;
+    }
+    .persona {
+        font-size: 16px;
+    }
+    .cargo {
+        font-size: 10px;
+    }
+}
+.jvectormap-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+}
+
+.jvectormap-tip {
+    position: absolute;
+    display: none;
+    border: solid 1px #CDCDCD;
+    border-radius: 3px;
+    background: #292929;
+    color: white;
+    font-family: sans-serif, Verdana;
+    font-size: smaller;
+    padding: 3px;
+}
+/*@media (max-width: 1024px){
+    #nav{
+        top: 0;
+        bottom: initial;
+    }
+}*/
