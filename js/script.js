@@ -71,6 +71,7 @@ $(function(){
 
     $(".buscar").on("click", function(){
         $("#buscador").val("");
+        $("image").css("display","block");
         if($(".language-container:visible").length != 0){
            $(".language-container").toggle(); 
         }
@@ -86,11 +87,16 @@ $(function(){
 
     // Buscador
     $("#buscador").on("keydown", function(e){
-        console.log($(this).val());
-    })
+        bucasdorAction();
+        // $("#buscador").focus();
+    });
 
     $("#nav img, .language-container img").on("click", function(){
         removeTarjeta();
+    });
+    $("#cerrar").on("click", function(){
+        $("#buscador").val("");
+        $("image").css("display","block");
     });
     // Cambiar idioma
     $(".language-container img").on("click", function(){
@@ -121,6 +127,9 @@ $(function(){
 
     $("#initial-touch").on("click",function(){
         $(this).remove();
+    });
+    $("image").attr( "name", function( i, val ) {
+      return global_lang[$(this).attr("data-index")].institucion.toLowerCase();
     });
 });
 
@@ -161,4 +170,16 @@ function offsetCoords(index, coord){
     // console.log();
     // return coord + ( parseInt(Math.random().toString().substr(0,8)) );
     return coord +  Math.random();
+}
+
+function bucasdorAction(argument,element) {
+    // setTimeout( function(){ console.log($("#buscador").val())}, 1);
+    $("image").css("display","none");
+    setTimeout( function(){ 
+        if($("#buscador").val() == ""){
+            $("image").css("display","block");
+        }
+        $("image[name*='"+$("#buscador").val()+"']").css("display","block");
+    }, 1);
+    // $("image[name*='"+$("#buscador").val()+"']").css("display","block");
 }
