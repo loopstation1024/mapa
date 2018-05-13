@@ -87,6 +87,7 @@ $(function(){
 
     // Buscador
     $("#buscador").on("keydown", function(e){
+        
         bucasdorAction();
         // $("#buscador").focus();
     });
@@ -176,10 +177,12 @@ function bucasdorAction(argument,element) {
     // setTimeout( function(){ console.log($("#buscador").val())}, 1);
     $("image").css("display","none");
     setTimeout( function(){ 
+       var texto = $("#buscador").val().toLowerCase();
+       // console.log(typeof(texto));
         if($("#buscador").val() == ""){
             $("image").css("display","block");
         }
-        $("image[name*='"+$("#buscador").val()+"']").css("display","block");
+        $("image[name*='"+texto+"']").css("display","block");
     }, 1);
     // $("image[name*='"+$("#buscador").val()+"']").css("display","block");
 }
