@@ -232,6 +232,21 @@ circle[data-index="130"]{
     font-size: smaller;
     padding: 3px;
 }
+@media (min-width: 769px){
+    .logo-universia img {
+        width: 500px;
+    }
+    .touch-bottom img {
+        width: 25px;
+    }
+    .touch-bottom h5 {
+        /* margin-bottom: 0px; */
+    }
+    .touch-bottom p {
+        font-size: 11px;
+        margin-top: 0px;
+    }
+}
 /*@media (max-width: 1024px){
     #nav{
         top: 0;
