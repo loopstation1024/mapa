@@ -6,11 +6,11 @@ $(function(){
         map: 'world_merc',
         backgroundColor: "transparent", 
         markers: coords.map(function(h){
-            console.log( parseInt( Math.random().toString().substr(0,6) )) ;
+            // console.log( parseInt( Math.random().toString().substr(0,6) )) ;
             return { 
                 latLng: [ 
-                    h.coords[0],
-                    h.coords[1] 
+                    offsetCoords(h,h.coords[0]),
+                    offsetCoords(h,h.coords[1]) 
                 ]
             } 
         }),
@@ -154,4 +154,11 @@ function myOnMarkerTipShow(e, code){
 
 function removeTarjeta(){
     $(".tarjeta_container").remove();
+}
+
+function offsetCoords(index, coord){
+    // console.log(  coord + ( parseInt(Math.random().toString().substr(0,8)) ) );
+    // console.log();
+    // return coord + ( parseInt(Math.random().toString().substr(0,8)) );
+    return coord +  Math.random();
 }
