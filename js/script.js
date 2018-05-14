@@ -43,7 +43,7 @@ $(function(){
                 ]
             } 
         }),
-        zoomMax: 500,
+        zoomMax: 1200,
         zoomOnScrollSpeed: 1,
         series: {
             regions: [{
@@ -240,7 +240,7 @@ function removeTarjeta()
 
 function offsetCoords(index, coord)
 {   
-    return coord +  ( Math.random() * (0.3 - 0.1) + 0.1 );
+    return coord +  ( Math.random() * (0.5 - 0.1) + 0.2 );
 }
 
 function bucasdorAction(argument,element)
