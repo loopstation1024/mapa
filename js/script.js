@@ -8,9 +8,25 @@ $(function(){
         markers: coords.map(function(h){
             // console.log( parseInt( Math.random().toString().substr(0,6) )) ;
             // console.log(h.coords[0]);
-            if(h.coords[0] == 38.345997 
-                
+            if(h.coords[0] == 38.345997
+                || h.coords[0] == 39.469906
+                || h.coords[0] == 38.345996
+                || h.coords[0] == 42.598724
+                || h.coords[0] == 43.18284
+                || h.coords[0] == 42.989624
+                || h.coords[0] == 42.695393
+                || h.coords[0] == 42.878212
+                || h.coords[0] == 39.986355
+                || h.coords[0] == 47.99901
+                || h.coords[0] == 38.907192
+                || h.coords[0] == 41.580093
+                || h.coords[0] == 37.77493
+                || h.coords[0] == 9.748917
+                || h.coords[0] == -2.170998
+                || h.coords[0] == -35.4259
 
+
+                // || h.coords[0] == 42.989624
             ){  
                 return { latLng: h.coords } 
             }
