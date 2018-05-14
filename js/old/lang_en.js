@@ -1,7 +1,7 @@
 var lang_en = [
     {
         "institucion": "Casa Real España",
-        "icono": "casa_real",
+        "icono": "real",
         "pais": "españa",
         "region": "madrid",
         "persona": "",

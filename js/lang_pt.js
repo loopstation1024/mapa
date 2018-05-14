@@ -1,7 +1,7 @@
 var lang_pt = [
  {
    "institucion": "Casa Real España",
-   "icono": "casa_real",
+   "icono": "real",
    "pais": "españa",
    "region": "madrid",
    "twitter": "https://twitter.com/casareal?lang=es",
@@ -37,7 +37,7 @@ var lang_pt = [
  },
  {
    "institucion": "Banco Santander",
-   "icono": "banco_santander",
+   "icono": "banco",
    "pais": "españa",
    "region": "madrid",
    "twitter": "https://twitter.com/bancosantander?lang=es",

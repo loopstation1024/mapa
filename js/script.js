@@ -7,6 +7,13 @@ $(function(){
         backgroundColor: "transparent", 
         markers: coords.map(function(h){
             // console.log( parseInt( Math.random().toString().substr(0,6) )) ;
+            // console.log(h.coords[0]);
+            if(h.coords[0] == 38.345997 
+                
+
+            ){  
+                return { latLng: h.coords } 
+            }
             return { 
                 latLng: [ 
                     offsetCoords(h,h.coords[0]),
@@ -109,7 +116,7 @@ $(function(){
     $(".language-container img").on("click", function()
     {
         $(".language-container").toggle();
-        console.log($(this).attr("data-language"));
+        // console.log($(this).attr("data-language"));
         switch($(this).attr("data-language")) {
             case "es":
                 global_lang = lang_es;
@@ -151,7 +158,9 @@ function myOnMarkerTipShow(e, code)
 {
     removeTarjeta()
     var info = global_lang;
-    // console.log(info[code].icono);
+    console.log(code);
+    console.log(coords[code].coords[0]);
+    console.log(coords[code].coords[1]);
     var tarjetaClass= "tarjeta-"+info[code].icono;
     var tarjetaId = "tarjeta-"+code;
     var html = `

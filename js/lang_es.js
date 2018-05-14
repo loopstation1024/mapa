@@ -1,7 +1,7 @@
 var lang_es = [
  {
    "institucion": "Casa Real España",
-   "icono": "casa_real",
+   "icono": "real",
    "pais": "españa",
    "region": "madrid",
    "twitter": "https://twitter.com/casareal?lang=es",
@@ -37,7 +37,7 @@ var lang_es = [
  },
  {
    "institucion": "Banco Santander",
-   "icono": "banco_santander",
+   "icono": "banco",
    "pais": "españa",
    "region": "madrid",
    "twitter": "https://twitter.com/bancosantander?lang=es",
@@ -1534,5 +1534,9 @@ var lang_es = [
    "linkedin": "https://www.linkedin.com/company/university-of-alicante/?originalSubdomain=es",
    "persona": "Francis Mojica",
    "cargo": "Microbiólogo, investigador y profesor titular del Departamento de Fisiología, Genética y Microbiología de la Universidad de Alicante "
- }
+ },
+ {
+      initial_title: "EMPIEZA A NAVEGAR",
+      initial_text: "Por el universo de redes sociales del IV Encuentro de Rectores",
+},
 ];
