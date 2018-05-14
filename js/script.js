@@ -174,7 +174,7 @@ function myOnMarkerTipShow(e, code)
             return `<a href="https://twitter.com/UniversiaMex" target="_blank" style="text-decoration: none;margin:0 15px;">
                 <img src="icons/icono-twitter.png" class="icono-twitter" style="margin: 0px;width: 24px;">
             </a>             
-            <a href="https://twitter.com/santanderunimx" target="_blank">
+            <a href="https://twitter.com/santanderunimx" target="_blank" style="text-decoration: none;margin:0 15px;">
                 <img src="icons/icono-twitter.png" class="icono-twitter" style="margin: 0px;width: 24px;">
             </a>
             <a href="https://www.instagram.com/universia_mx/" target="_blank" style="text-decoration: none;margin:0 15px;">
