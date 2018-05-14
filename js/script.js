@@ -24,9 +24,17 @@ $(function(){
                 || h.coords[0] == 9.748917
                 || h.coords[0] == -2.170998
                 || h.coords[0] == -35.4259
+                || h.coords[0] == 33.97159
+                || h.coords[0] == -34.68741
+                || h.coords[0] == -34.720634
+                || h.coords[0] == -34.76118
+                || h.coords[0] == -34.90111
+                || h.coords[0] == -32.299885
+                || h.coords[0] == -22.906847
+                || h.coords[0] == 39.99967
+                || h.coords[0] == 57.70887
+                || h.coords[0] == -2.170998
 
-
-                // || h.coords[0] == 42.989624
             ){  
                 return { latLng: h.coords } 
             }
@@ -235,8 +243,10 @@ function removeTarjeta()
 }
 
 function offsetCoords(index, coord)
-{
-    return coord +  Math.random();
+{   
+    // console.log(Math.random() * (0.3 - 0.1) + 0.1);
+    // return coord +  Math.random() * (max - min) + min;
+    return coord +  ( Math.random() * (0.3 - 0.1) + 0.1 );
 }
 
 function bucasdorAction(argument,element)
