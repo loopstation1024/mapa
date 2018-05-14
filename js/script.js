@@ -6,8 +6,6 @@ $(function(){
         map: 'world_merc',
         backgroundColor: "transparent", 
         markers: coords.map(function(h){
-            // console.log( parseInt( Math.random().toString().substr(0,6) )) ;
-            // console.log(h.coords[0]);
             if(h.coords[0] == 38.345997
                 || h.coords[0] == 39.469906
                 || h.coords[0] == 38.345996
@@ -140,7 +138,6 @@ $(function(){
     $(".language-container img").on("click", function()
     {
         $(".language-container").toggle();
-        // console.log($(this).attr("data-language"));
         switch($(this).attr("data-language")) {
             case "es":
                 global_lang = lang_es;
@@ -204,34 +201,33 @@ function myOnMarkerTipShow(e, code)
     ;
     function redes(info,code){
         if(code==13){
-            return `<a href="https://twitter.com/UniversiaMex" target="_blank" style="text-decoration: none;margin:0 15px;">
+            return `<a href="https://twitter.com/UniversiaMex" target="_blank" style="text-decoration: none;">
                 <img src="icons/icono-twitter.png" class="icono-twitter" style="margin: 0px;width: 24px;">
             </a>             
-            <a href="https://twitter.com/santanderunimx" target="_blank" style="text-decoration: none;margin:0 15px;">
+            <a href="https://twitter.com/santanderunimx" target="_blank" style="text-decoration: none;">
                 <img src="icons/icono-twitter.png" class="icono-twitter" style="margin: 0px;width: 24px;">
             </a>
-            <a href="https://www.instagram.com/universia_mx/" target="_blank" style="text-decoration: none;margin:0 15px;">
+            <a href="https://www.instagram.com/universia_mx/" target="_blank" style="text-decoration: none;">
                 <img src="icons/icono-instagram.png" class="icono-instagram" style="margin: 0px;width: 24px;">
             </a>           
-            <a href="https://www.instagram.com/santanderunimx" target="_blank" style="text-decoration: none;margin:0 15px;">
+            <a href="https://www.instagram.com/santanderunimx" target="_blank" style="text-decoration: none;">
                 <img src="icons/icono-instagram.png" class="icono-instagram" style="margin: 0px;width: 24px;">
             </a>
-            <a href="https://www.facebook.com/universia.mexico/" target="_blank" style="text-decoration: none;margin:0 15px;">
+            <a href="https://www.facebook.com/universia.mexico/" target="_blank" style="text-decoration: none;">
                 <img src="icons/icono-facebook.png" class="icono-facebook" style="margin: 0px;width: 24px;">
             </a>          
-            <a href="https://www.facebook.com/santanderunimx" target="_blank" style="text-decoration: none;margin:0 15px;">
+            <a href="https://www.facebook.com/santanderunimx" target="_blank" style="text-decoration: none;">
                 <img src="icons/icono-facebook.png" class="icono-facebook" style="margin: 0px;width: 24px;">
             </a>
-            <a href="https://www.linkedin.com/company/28158455/" target="_blank" style="text-decoration: none;margin:0 15px;">
+            <a href="https://www.linkedin.com/company/28158455/" target="_blank" style="text-decoration: none;">
                 <img src="icons/icono-linkedin.png" class="icono-linkedin" style="margin: 0px;width: 24px;">
             </a>`
         }
 
         return showRedesSociales(info[code].twitter,"twitter")+
-        showRedesSociales(info[code].instagram,"instagram")+
-        showRedesSociales(info[code].facebook,"facebook")+
-        showRedesSociales(info[code].linkedin,"linkedin");
-        
+            showRedesSociales(info[code].instagram,"instagram")+
+            showRedesSociales(info[code].facebook,"facebook")+
+            showRedesSociales(info[code].linkedin,"linkedin");
     }
 
     $("body").append(html);
@@ -244,8 +240,6 @@ function removeTarjeta()
 
 function offsetCoords(index, coord)
 {   
-    // console.log(Math.random() * (0.3 - 0.1) + 0.1);
-    // return coord +  Math.random() * (max - min) + min;
     return coord +  ( Math.random() * (0.3 - 0.1) + 0.1 );
 }
 
@@ -254,7 +248,6 @@ function bucasdorAction(argument,element)
     $("image").css("display","none");
     setTimeout( function(){ 
        var texto = $("#buscador").val().toLowerCase();
-       // console.log(typeof(texto));
         if($("#buscador").val() == ""){
             $("image").css("display","block");
         }

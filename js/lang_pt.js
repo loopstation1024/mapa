@@ -1534,5 +1534,9 @@ var lang_pt = [
    "linkedin": "https://www.linkedin.com/company/university-of-alicante/?originalSubdomain=es",
    "persona": "Francis Mojica",
    "cargo": "Microbiólogo, investigador e professor titular do Departamento de Fisiologia, Genética e Microbiologia "
- }
+ },
+ {
+      initial_title: "EMPIEZA A NAVEGAR",
+      initial_text: "Por el universo de redes sociales del IV Encuentro de Rectores",
+}
 ];

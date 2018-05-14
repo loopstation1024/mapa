@@ -1534,5 +1534,9 @@ var lang_en = [
    "linkedin": "https://www.linkedin.com/company/university-of-alicante/?originalSubdomain=es",
    "persona": "Francis Mojica",
    "cargo": "Microbiologist, researcher and tenured professor at the University of Alicante's Department of Physiology, Genetics and Microbiology"
- }
+ },
+ {
+      initial_title: "EMPIEZA A NAVEGAR",
+      initial_text: "Por el universo de redes sociales del IV Encuentro de Rectores",
+}
 ];
