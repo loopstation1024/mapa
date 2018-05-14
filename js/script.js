@@ -59,17 +59,20 @@ $(function(){
     });
 
     /* custom code*/
-    $("body").on("click",".tarjeta-cerrar",function(){
+    $("body").on("click",".tarjeta-cerrar",function()
+    {
         removeTarjeta();
     });
 
-    // Zoom original
-    $(".home").on("click", function(){
+    // Restaurar zoom original
+    $(".home").on("click", function()
+    {
         map.reset();
         map.series.regions[0].setValues(regiones);
     });
 
-    $(".buscar").on("click", function(){
+    $(".buscar").on("click", function()
+    {
         $("#buscador").val("");
         $("image").css("display","block");
         if($(".language-container:visible").length != 0){
@@ -78,7 +81,8 @@ $(function(){
         $(".buscar-container").toggle();
     });
 
-    $(".language").on("click", function(){
+    $(".language").on("click", function()
+    {
         if($(".buscar-container:visible").length != 0){
            $(".buscar-container").toggle(); 
         }
@@ -86,21 +90,24 @@ $(function(){
     });
 
     // Buscador
-    $("#buscador").on("keydown", function(e){
-        
+    $("#buscador").on("keydown", function(e)
+    {
         bucasdorAction();
-        // $("#buscador").focus();
     });
 
-    $("#nav img, .language-container img").on("click", function(){
+    $("#nav img, .language-container img").on("click", function()
+    {
         removeTarjeta();
     });
-    $("#cerrar").on("click", function(){
+    $("#cerrar").on("click", function()
+    {
         $("#buscador").val("");
         $("image").css("display","block");
     });
+
     // Cambiar idioma
-    $(".language-container img").on("click", function(){
+    $(".language-container img").on("click", function()
+    {
         $(".language-container").toggle();
         console.log($(this).attr("data-language"));
         switch($(this).attr("data-language")) {
@@ -114,6 +121,10 @@ $(function(){
                 global_lang = lang_pt;
                 break;
         }
+        $("image").attr( "name", function( i, val )
+        {
+            return global_lang[$(this).attr("data-index")].institucion.toLowerCase();
+        });
     });
 
     var initial_text = `
@@ -122,20 +133,22 @@ $(function(){
             <img src="icons/icono-touch.png" class="icon-touch" />
             <h5>`+global_lang[global_lang.length-1].initial_title+`</h5>
             <p>`+global_lang[global_lang.length-1].initial_text+`</p>
-        </div>
-    `;
+        </div>`;
+
     $("#initial-touch").html(initial_text);
 
-    $("#initial-touch").on("click",function(){
+    $("#initial-touch").on("click",function()
+    {
         $(this).remove();
     });
-    $("image").attr( "name", function( i, val ) {
+    $("image").attr( "name", function( i, val )
+    {
       return global_lang[$(this).attr("data-index")].institucion.toLowerCase();
     });
 });
 
-function myOnMarkerTipShow(e, code){
-    console.log(code)
+function myOnMarkerTipShow(e, code)
+{
     removeTarjeta()
     var info = global_lang;
     // console.log(info[code].icono);
@@ -148,10 +161,7 @@ function myOnMarkerTipShow(e, code){
         </div>
         <div class="texto-container">
             <div class="redes-sociales">
-                <a href="`+info[code].twitter+`" target="_blank"><img src="icons/icono-twitter.png" class="icono-twitter"/></a>
-                <a href="`+info[code].instagram+`" target="_blank"><img src="icons/icono-pinterest.png" class="icono-pinterest"/></a>
-                <a href="`+info[code].facebook+`" target="_blank"><img src="icons/icono-facebook.png" class="icono-facebook"/></a>
-                <a href="`+info[code].linkedin+`" target="_blank"><img src="icons/icono-linkedin.png" class="icono-linkedin"/></a>
+            `+redes(info,code)+`
             </div>
             <h2 class="persona">`+info[code].persona+`</h2>
             <h5 class="cargo">`+info[code].cargo+`</h5>
@@ -159,22 +169,53 @@ function myOnMarkerTipShow(e, code){
         <div class="tarjeta-cerrar" data-tarjeta="`+code+`"></div>
     </div>`
     ;
+    function redes(info,code){
+        if(code==13){
+            return `<a href="https://twitter.com/UniversiaMex" target="_blank" style="text-decoration: none;margin:0 15px;">
+                <img src="icons/icono-twitter.png" class="icono-twitter" style="margin: 0px;width: 24px;">
+            </a>             
+            <a href="https://twitter.com/santanderunimx" target="_blank">
+                <img src="icons/icono-twitter.png" class="icono-twitter" style="margin: 0px;width: 24px;">
+            </a>
+            <a href="https://www.instagram.com/universia_mx/" target="_blank" style="text-decoration: none;margin:0 15px;">
+                <img src="icons/icono-instagram.png" class="icono-instagram" style="margin: 0px;width: 24px;">
+            </a>           
+            <a href="https://www.instagram.com/santanderunimx" target="_blank" style="text-decoration: none;margin:0 15px;">
+                <img src="icons/icono-instagram.png" class="icono-instagram" style="margin: 0px;width: 24px;">
+            </a>
+            <a href="https://www.facebook.com/universia.mexico/" target="_blank" style="text-decoration: none;margin:0 15px;">
+                <img src="icons/icono-facebook.png" class="icono-facebook" style="margin: 0px;width: 24px;">
+            </a>          
+            <a href="https://www.facebook.com/santanderunimx" target="_blank" style="text-decoration: none;margin:0 15px;">
+                <img src="icons/icono-facebook.png" class="icono-facebook" style="margin: 0px;width: 24px;">
+            </a>
+            <a href="https://www.linkedin.com/company/28158455/" target="_blank" style="text-decoration: none;margin:0 15px;">
+                <img src="icons/icono-linkedin.png" class="icono-linkedin" style="margin: 0px;width: 24px;">
+            </a>`
+        }
+
+        return showRedesSociales(info[code].twitter,"twitter")+
+        showRedesSociales(info[code].instagram,"instagram")+
+        showRedesSociales(info[code].facebook,"facebook")+
+        showRedesSociales(info[code].linkedin,"linkedin");
+        
+    }
+
     $("body").append(html);
 }   
 
-function removeTarjeta(){
+function removeTarjeta()
+{
     $(".tarjeta_container").remove();
 }
 
-function offsetCoords(index, coord){
-    // console.log(  coord + ( parseInt(Math.random().toString().substr(0,8)) ) );
-    // console.log();
-    // return coord + ( parseInt(Math.random().toString().substr(0,8)) );
+function offsetCoords(index, coord)
+{
     return coord +  Math.random();
 }
 
-function bucasdorAction(argument,element) {
-    // setTimeout( function(){ console.log($("#buscador").val())}, 1);
+function bucasdorAction(argument,element)
+{
     $("image").css("display","none");
     setTimeout( function(){ 
        var texto = $("#buscador").val().toLowerCase();
@@ -184,5 +225,13 @@ function bucasdorAction(argument,element) {
         }
         $("image[name*='"+texto+"']").css("display","block");
     }, 1);
-    // $("image[name*='"+$("#buscador").val()+"']").css("display","block");
+}
+
+function showRedesSociales(link, red)
+{
+    if(link !== "x"){
+        return `<a href="`+link+`" target="_blank"><img src="icons/icono-`+red+`.png" class="icono-`+red+`"/></a>`;
+    }else{
+        return "";
+    }
 }
