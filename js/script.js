@@ -1,4 +1,4 @@
-var global_lang = lang_es;
+var global_lang;
 $(function(){
     var map, markerIndex = 0, markersCoords = {};
     map = new jvm.Map({
@@ -136,8 +136,11 @@ $(function(){
 
     // Cambiar idioma
     $(".language-container img").on("click", function()
-    {
+    {   
+        $(".language-container img").css("opacity",0.5);
+        $(this).css("opacity",1);
         $(".language-container").toggle();
+
         switch($(this).attr("data-language")) {
             case "es":
                 global_lang = lang_es;
@@ -145,15 +148,40 @@ $(function(){
             case "en":
                 global_lang = lang_en;
                 break;
-            case "pt":
+            case "pt-PT":
+                global_lang = lang_pt;
+                break;
+            case "pt-BR":
                 global_lang = lang_pt;
                 break;
         }
+
         $("image").attr( "name", function( i, val )
         {
             return global_lang[$(this).attr("data-index")].institucion.toLowerCase();
         });
     });
+
+    var ln = window.navigator.language||navigator.browserLanguage;
+       
+        if( RegExp('en.*').test(ln) ){
+            global_lang = lang_en;
+            $('.language-container img[data-language="en"]').css("opacity",1);
+        }else if( ln == "pt-PT" ){
+            global_lang = lang_pt;
+            $('.language-container img[data-language="pt-PT"]').css("opacity",1);
+        }else if( ln == "pt-BR" ){
+            global_lang = lang_pt;
+            $('.language-container img[data-language="pt-BR"]').css("opacity",1);
+        }else if( RegExp('es.*').test(ln) ){
+            $('.language-container img[data-language="es"]').css("opacity",1);
+            global_lang = lang_es;
+        }else{
+            global_lang = lang_en;
+            $('.language-container img[data-language="en"]').css("opacity",1);
+        }
+
+        $("body").attr("data-lang",ln);
 
     var initial_text = `
         <div class="logo-universia"><img src="img/logo1.png" /></div>
@@ -162,6 +190,7 @@ $(function(){
             <h5>`+global_lang[global_lang.length-1].initial_title+`</h5>
             <p>`+global_lang[global_lang.length-1].initial_text+`</p>
         </div>`;
+
 
     $("#initial-touch").html(initial_text);
 
@@ -179,9 +208,6 @@ function myOnMarkerTipShow(e, code)
 {
     removeTarjeta()
     var info = global_lang;
-    console.log(code);
-    console.log(coords[code].coords[0]);
-    console.log(coords[code].coords[1]);
     var tarjetaClass= "tarjeta-"+info[code].icono;
     var tarjetaId = "tarjeta-"+code;
     var html = `

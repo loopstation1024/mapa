@@ -1536,7 +1536,7 @@ var lang_en = [
    "cargo": "Microbiologist, researcher and tenured professor at the University of Alicante's Department of Physiology, Genetics and Microbiology"
  },
  {
-      initial_title: "EMPIEZA A NAVEGAR",
-      initial_text: "Por el universo de redes sociales del IV Encuentro de Rectores",
+      initial_title: "START BROWSING",
+      initial_text: "In the social network universe",
 }
 ];

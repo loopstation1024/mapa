@@ -1536,7 +1536,7 @@ var lang_pt = [
    "cargo": "Microbiólogo, investigador e professor titular do Departamento de Fisiologia, Genética e Microbiologia "
  },
  {
-      initial_title: "EMPIEZA A NAVEGAR",
-      initial_text: "Por el universo de redes sociales del IV Encuentro de Rectores",
+      initial_title: "COMECE A NAVEGAR",
+      initial_text: "Para o universo de redes sociais de IV Encontro de Reitores",
 }
 ];

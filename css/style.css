@@ -38,6 +38,13 @@ image{
 .nav_container img, .language-container img{
     cursor: pointer;
 }
+.language-container img{
+    opacity: 0.5;
+}
+.language-container img:hover{
+    opacity: 1;
+}
+
 .buscar-container, .language-container{
     background-color: #fff;
     border-radius: 50px;
